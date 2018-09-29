@@ -37,16 +37,15 @@ public class ProfileActivity extends AppCompatActivity {
         login.setTextSize(25);
         login.setText(user.login);
         RecyclerView bill_list = findViewById(R.id.biil_list);
-        cards.add(new Card("Вода", 45));
-        cards.add(new Card("Газ", 46));
-        cards.add(new Card("Электричество", 47));
+        cards.add(new Card("Вода", 145));
+        cards.add(new Card("Газ", 347));
+        cards.add(new Card("Электричество", 262));
         bill_list.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getResources());
         bill_list.setAdapter(adapter);
     }
     public void buy(View view)
     {
-        //Toast.makeText(getApplicationContext(), "Оплата...", Toast.LENGTH_LONG).show();
-
+        Toast.makeText(getApplicationContext(), "Оплата...", Toast.LENGTH_LONG).show();
     }
 }
