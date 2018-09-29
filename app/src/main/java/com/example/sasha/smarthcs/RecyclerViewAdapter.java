@@ -19,9 +19,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     Resources resources;
     private OnResourceSelected callback;
 
-    public RecyclerViewAdapter(Resources resources, OnResourceSelected callback) {
+    public RecyclerViewAdapter(Resources resources) {
         this.resources = resources;
-        this.callback = callback;
     }
 
     @NonNull
@@ -41,8 +40,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         if (i == 1) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.gaz));
         if (i == 2) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.light));
         if (i == 3) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.rubles));
-        callback.onResourcesSelected(i);
-
     }
 
     @Override

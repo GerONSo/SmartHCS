@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 for(int i = 0; i < users.size(); i++) {
                     if(cur_name.equals(users.get(i).getLogin()) && cur_password.equals(users.get(i).getPassword())) {
                         index = i;
+                        upd();
                         openProfile();
                         ok = true;
                     }
@@ -73,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
         user.history = history;
     }
 
+    public static void clearHistory(User user) {
+        ArrayList<Bill> history = new ArrayList<>();
+        user.history = history;
+    }
+
     public static void addUsers() {
         user_base.add(new User("Glebik8", "456"));
         user_base.add(new User("47th-Draganov", "123"));
@@ -82,6 +88,18 @@ public class MainActivity extends AppCompatActivity {
         addHistory(user_base.get(1));
         addHistory(user_base.get(2));
         addHistory(user_base.get(3));
+    }
+
+    public static void upd()
+    {
+        cards.clear();
+        int j = index;
+        User user = user_base.get(j);
+        Bill last = user.history.get(user.history.size() - 1);
+        cards.add(new Card("Вода", last.sum_w));
+        cards.add(new Card("Газ", last.sum_g));
+        cards.add(new Card("Электричество", last.sum_l));
+        cards.add(new Card("Итого", last.sum_l + last.sum_w + last.sum_g));
     }
 
     public static double water_resurse(int cost)

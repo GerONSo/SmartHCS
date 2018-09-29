@@ -12,8 +12,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.math.BigDecimal;
+import java.nio.channels.SelectionKey;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Currency;
+
 import android.widget.EditText;
+
+import ru.yandex.money.android.sdk.Amount;
+import ru.yandex.money.android.sdk.Checkout;
+import ru.yandex.money.android.sdk.Configuration;
+import ru.yandex.money.android.sdk.PaymentMethodType;
+import ru.yandex.money.android.sdk.ShopParameters;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static java.security.AccessController.getContext;
@@ -21,6 +32,7 @@ import static java.security.AccessController.getContext;
 public class ProfileActivity extends AppCompatActivity {
 
     ArrayList<User> user_base = MainActivity.user_base;
+    ArrayList<Bill> history = user_base.get(MainActivity.index).history;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,14 +48,49 @@ public class ProfileActivity extends AppCompatActivity {
         login.setTextSize(15);
         login.setText(user.login);
         RecyclerView bill_list = findViewById(R.id.biil_list);
-        MainActivity.cards.add(new Card("Вода", last.sum_w));
-        MainActivity.cards.add(new Card("Газ", last.sum_g));
-        MainActivity.cards.add(new Card("Электричество", last.sum_l));
-        MainActivity.cards.add(new Card("Итого", last.sum_l + last.sum_w + last.sum_g));
         bill_list.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getResources());
+        bill_list.setAdapter(adapter);
+        Checkout.attach(getSupportFragmentManager());
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Checkout.detach();
+    }
+
     public void buy(View view)
     {
         Toast.makeText(getApplicationContext(), "Оплата...", Toast.LENGTH_LONG).show();
+        timeToStartCheckout();
+    }
+
+    void timeToStartCheckout() {
+
+        Checkout.configureTestMode(
+                new Configuration(
+                        true,
+                        true,
+                        true,
+                        1,
+                        true,
+                        true
+                )
+        );
+        int sum = 0;
+        Bill last = history.get(history.size() - 1);
+        sum = sum + last.sum_g + last.sum_l + last.sum_w;
+        Checkout.tokenize(
+                this,
+                new Amount(new BigDecimal(Integer.toString(sum)), Currency.getInstance("RUB")),
+                new ShopParameters(
+                        "Умный ЖКХ",
+                        "Ростелеком!!!",
+                        "47",
+                        Collections.singleton(PaymentMethodType.BANK_CARD)
+
+                )
+        );
     }
 }
