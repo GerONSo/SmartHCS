@@ -19,7 +19,7 @@ public class GazInfo extends AppCompatActivity {
         double cost = MainActivity.gas_resurse(w);
         int first = (int)(cost);
         int second = (int)((cost - first) * 100);
-        String res = Integer.toString(first) + "." + Integer.toString(second) + " м³";
+        String res = Integer.toString(first) + "." + (Integer.toString(second).length() == 1 ? "0" : "") + Integer.toString(second) + " м³";
         TextView resource = findViewById(R.id.resource_g);
         resource.setTextSize(30);
         resource.setText(res);

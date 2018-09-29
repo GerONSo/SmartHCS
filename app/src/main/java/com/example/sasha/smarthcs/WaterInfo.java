@@ -20,7 +20,7 @@ public class WaterInfo extends AppCompatActivity {
         double cost = MainActivity.water_resurse(w);
         int first = (int)(cost);
         int second = (int)((cost - first) * 100);
-        String res = Integer.toString(first) + "." + Integer.toString(second) + " м³";
+        String res = Integer.toString(first) + "." + (Integer.toString(second).length() == 1 ? "0" : "") + Integer.toString(second) + " м³";
         TextView resource = findViewById(R.id.resource_w);
         resource.setTextSize(30);
         resource.setText(res);
