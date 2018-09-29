@@ -2,6 +2,7 @@ package com.example.sasha.smarthcs;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,5 +20,11 @@ public class LightInfo extends AppCompatActivity {
         int first = (int)(cost);
         int second = (int)((cost - first) * 100);
         String res = Integer.toString(first) + "." + Integer.toString(second) + " МВт/Ч";
+        TextView resource = findViewById(R.id.resource_l);
+        resource.setTextSize(30);
+        resource.setText(res);
+        TextView sum = findViewById(R.id.sum_l);
+        sum.setTextSize(30);
+        sum.setText(Integer.toString(last.sum_l) + " Рублей");
     }
 }

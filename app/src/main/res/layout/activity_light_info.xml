@@ -8,10 +8,10 @@
     <TextView
         android:layout_width="180dp"
         android:layout_height="75dp"
-        android:id="@+id/rate_g"
+        android:id="@+id/rate_l"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/gaz"
+        app:layout_constraintRight_toLeftOf="@id/light"
         app:layout_constraintBottom_toTopOf="@id/values"
         android:text="500 ₽/МВт/ч"
         android:textSize="30dp"/>
@@ -19,42 +19,42 @@
     <ImageView
         android:layout_width="110dp"
         android:layout_height="88dp"
-        android:id="@+id/gaz"
+        android:id="@+id/light"
         android:src="@drawable/light"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/rate_g"
+        app:layout_constraintLeft_toRightOf="@id/rate_l"
         app:layout_constraintBottom_toTopOf="@id/values"/>
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:id="@+id/values"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gaz"
+        app:layout_constraintTop_toBottomOf="@id/light"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
         <TextView
             android:layout_width="150dp"
             android:layout_height="75dp"
-            android:id="@+id/resource_g"
+            android:id="@+id/resource_l"
             android:text="Hui"
             android:textAlignment="center"
             android:textSize="30dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/sum_g"/>
+            app:layout_constraintBottom_toTopOf="@id/sum_l"/>
         <TextView
             android:layout_width="150dp"
             android:layout_height="75dp"
-            android:id="@+id/sum_g"
+            android:id="@+id/sum_l"
             android:text="Pizda"
             android:textAlignment="center"
             android:textSize="30dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/resource_g"
+            app:layout_constraintTop_toBottomOf="@id/resource_l"
             />
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

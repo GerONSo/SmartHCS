@@ -106,19 +106,19 @@ public class MainActivity extends AppCompatActivity {
     public static double water_resurse(int cost)
     {
         double res = (double)(cost) / 100;
-        return res;
+        return res + 0.005;
     }
 
     public static double gas_resurse(int cost)
     {
-        double res = (double)(cost) / 500;
-        return res;
+        double res = (double)(cost) / 6.5;
+        return res + 0.005;
     }
 
     public static double light_resurse(int cost)
     {
-        double res = (double)(cost) / 6.5;
-        return res;
+        double res = (double)(cost) / 500;
+        return res + 0.005;
     }
 
 }
