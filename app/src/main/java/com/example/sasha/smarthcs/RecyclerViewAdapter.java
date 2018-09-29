@@ -26,12 +26,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        //viewHolder.name.setText(MainActivity.cards.get(i).name);
-        //viewHolder.cost.setText((int)MainActivity.cards.get(i).cost);
-        //viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.gaz));
-        viewHolder.name.setText("Вода");
-        viewHolder.cost.setText("46");
-        viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.gaz));
+        viewHolder.name.setTextSize(20);
+        viewHolder.cost.setTextSize(20);
+        viewHolder.name.setText(ProfileActivity.cards.get(i).name);
+        viewHolder.cost.setText(Integer.toString(ProfileActivity.cards.get(i).cost));
+        if (i == 0) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.water));
+        if (i == 1) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.gaz));
+        if (i == 2) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.light));
     }
 
     @Override
