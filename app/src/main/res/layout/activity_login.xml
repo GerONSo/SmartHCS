@@ -13,7 +13,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="fields"/>
+        app:layout_constraintBottom_toTopOf="@id/fields"/>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/fields"
@@ -55,4 +55,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fields"/>
+
 </android.support.constraint.ConstraintLayout>
