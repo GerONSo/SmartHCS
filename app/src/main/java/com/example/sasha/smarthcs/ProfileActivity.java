@@ -31,13 +31,14 @@ public class ProfileActivity extends AppCompatActivity {
 //        startActivity(intent);
         int j = MainActivity.index;
         User user = user_base.get(j);
+        Bill last = user.history.get(user.history.size() - 1);
         TextView login = findViewById(R.id.textlogin);
         login.setTextSize(15);
         login.setText(user.login);
         RecyclerView bill_list = findViewById(R.id.biil_list);
-        MainActivity.cards.add(new Card("Вода", 145));
-        MainActivity.cards.add(new Card("Газ", 347));
-        MainActivity.cards.add(new Card("Электричество", 262));
+        MainActivity.cards.add(new Card("Вода", last.sum_w));
+        MainActivity.cards.add(new Card("Газ", last.sum_g));
+        MainActivity.cards.add(new Card("Электричество", last.sum_l));
         bill_list.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getResources());
         bill_list.setAdapter(adapter);

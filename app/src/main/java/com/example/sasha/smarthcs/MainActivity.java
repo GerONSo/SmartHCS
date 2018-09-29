@@ -63,11 +63,29 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public static void addHistory(User user) {
+        ArrayList<Bill> history = user.history;
+        history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
+        history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
+        history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
+        history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
+        user.history = history;
+    }
+
     public static void addUsers() {
         user_base.add(new User("Glebik8", "456"));
         user_base.add(new User("47th-Draganov", "123"));
         user_base.add(new User("karasek", "i_love_loli"));
         user_base.add(new User("hyper_serrriy", "123"));
+        addHistory(user_base.get(0));
+        addHistory(user_base.get(1));
+        addHistory(user_base.get(2));
+        addHistory(user_base.get(3));
+    }
+
+    public int water_resurse(int cost)
+    {
+        return 1;
     }
 
 }
