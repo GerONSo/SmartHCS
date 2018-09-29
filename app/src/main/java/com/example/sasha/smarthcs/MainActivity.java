@@ -84,15 +84,16 @@ public class MainActivity extends AppCompatActivity {
         user_base.add(new User("47th-Draganov", "123"));
         user_base.add(new User("karasek", "i_love_loli"));
         user_base.add(new User("hyper_serrriy", "123"));
-        addHistory(user_base.get(0));
-        addHistory(user_base.get(1));
-        addHistory(user_base.get(2));
-        addHistory(user_base.get(3));
     }
 
     public static void upd()
     {
         cards.clear();
+        user_base.get(index).history.clear();
+        addHistory(user_base.get(0));
+        addHistory(user_base.get(1));
+        addHistory(user_base.get(2));
+        addHistory(user_base.get(3));
         int j = index;
         User user = user_base.get(j);
         Bill last = user.history.get(user.history.size() - 1);
