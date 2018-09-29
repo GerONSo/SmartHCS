@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".WaterInfo"></activity>
+        <activity android:name=".WaterInfo" />
+        <activity android:name=".GazInfo" />
+        <activity android:name=".LightInfo"></activity>
     </application>
 
 </manifest>
