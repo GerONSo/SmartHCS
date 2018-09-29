@@ -20,7 +20,8 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".WaterInfo" />
         <activity android:name=".GazInfo" />
-        <activity android:name=".LightInfo"></activity>
+        <activity android:name=".LightInfo" />
+        <activity android:name=".TotalInfo"></activity>
     </application>
 
 </manifest>

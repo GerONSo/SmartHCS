@@ -61,6 +61,9 @@ public class ProfileActivity extends AppCompatActivity {
                 else if(pos == 2) {
                     startLightInfo();
                 }
+                else if(pos == 3) {
+                    startTotalInfo();
+                }
             }
         });
         bill_list.setAdapter(adapter);
@@ -119,6 +122,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void startGazInfo() {
         Intent intent = new Intent(this, GazInfo.class);
+        startActivity(intent);
+    }
+
+    private void startTotalInfo() {
+        Intent intent = new Intent(this, TotalInfo.class);
         startActivity(intent);
     }
 }
