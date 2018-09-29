@@ -10,10 +10,12 @@ public class User {
     }
 
     public User() {
+
     }
 
     String login = "", password = "";
     ArrayList<Bill> history;
+
     public void set_login(String LOGIN)
     {
         this.login = LOGIN;

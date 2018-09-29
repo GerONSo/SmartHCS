@@ -39,9 +39,8 @@ public class ProfileActivity extends AppCompatActivity {
         MainActivity.cards.add(new Card("Вода", last.sum_w));
         MainActivity.cards.add(new Card("Газ", last.sum_g));
         MainActivity.cards.add(new Card("Электричество", last.sum_l));
+        MainActivity.cards.add(new Card("Итого", last.sum_l + last.sum_w + last.sum_g));
         bill_list.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getResources());
-        bill_list.setAdapter(adapter);
     }
     public void buy(View view)
     {

@@ -11,10 +11,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    Resources resources;
 
-    public RecyclerViewAdapter(Resources resources) {
+    interface OnResourceSelected {
+        void onResourcesSelected(int pos);
+    }
+
+    Resources resources;
+    private OnResourceSelected callback;
+
+    public RecyclerViewAdapter(Resources resources, OnResourceSelected callback) {
         this.resources = resources;
+        this.callback = callback;
     }
 
     @NonNull
@@ -34,11 +41,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         if (i == 1) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.gaz));
         if (i == 2) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.light));
         if (i == 3) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.rubles));
+        callback.onResourcesSelected(i);
+
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return MainActivity.cards.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{

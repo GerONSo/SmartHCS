@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     static ArrayList<Card> cards = new ArrayList<>();
     static ArrayList<User> user_base = new ArrayList<>();
     static int index = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
