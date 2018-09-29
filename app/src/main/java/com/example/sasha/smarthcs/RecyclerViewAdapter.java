@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,8 +20,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     Resources resources;
     private OnResourceSelected callback;
 
-    public RecyclerViewAdapter(Resources resources) {
+    public RecyclerViewAdapter(Resources resources, OnResourceSelected callback) {
         this.resources = resources;
+        this.callback = callback;
     }
 
     @NonNull
@@ -31,7 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
         viewHolder.name.setTextSize(20);
         viewHolder.cost.setTextSize(20);
         viewHolder.name.setText(MainActivity.cards.get(i).name);
@@ -40,6 +42,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         if (i == 1) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.gaz));
         if (i == 2) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.light));
         if (i == 3) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.rubles));
+        viewHolder.plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callback.onResourcesSelected(i);
+            }
+        });
+
     }
 
     @Override
@@ -53,6 +62,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView name;
         TextView cost;
         ImageView icon;
+        ImageButton plus;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -60,6 +70,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             icon = view.findViewById(R.id.icon);
             cost = view.findViewById(R.id.cost);
             name = view.findViewById(R.id.name);
+            plus = view.findViewById(R.id.plus);
         }
     }
 }

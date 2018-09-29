@@ -49,7 +49,20 @@ public class ProfileActivity extends AppCompatActivity {
         login.setText(user.login);
         RecyclerView bill_list = findViewById(R.id.biil_list);
         bill_list.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getResources());
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(getResources(), new RecyclerViewAdapter.OnResourceSelected() {
+            @Override
+            public void onResourcesSelected(int pos) {
+                if(pos == 0) {
+                    startWaterInfo();
+                }
+                else if(pos == 1) {
+                    startGazInfo();
+                }
+                else if(pos == 2) {
+                    startLightInfo();
+                }
+            }
+        });
         bill_list.setAdapter(adapter);
         Checkout.attach(getSupportFragmentManager());
     }
@@ -92,5 +105,20 @@ public class ProfileActivity extends AppCompatActivity {
 
                 )
         );
+    }
+
+    private void startWaterInfo() {
+        Intent intent = new Intent(this, WaterInfo.class);
+        startActivity(intent);
+    }
+
+    private void startLightInfo() {
+        Intent intent = new Intent(this, LightInfo.class);
+        startActivity(intent);
+    }
+
+    private void startGazInfo() {
+        Intent intent = new Intent(this, GazInfo.class);
+        startActivity(intent);
     }
 }

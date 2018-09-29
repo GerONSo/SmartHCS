@@ -5,6 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WaterInfo">
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:id="@+id/rate_g"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/gaz"
+        app:layout_constraintBottom_toTopOf="@id/values"
+        android:text="100 ₽/м³"
+        android:textSize="30dp"/>
 
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="88dp"
+        android:id="@+id/gaz"
+        android:src="@drawable/water"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/rate_g"
+        app:layout_constraintBottom_toTopOf="@id/values"/>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:id="@+id/values"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gaz"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:id="@+id/resource_g"
+            android:text="Hui"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/sum_g"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:id="@+id/sum_g"
+            android:text="Pizda"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resource_g"
+            />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
