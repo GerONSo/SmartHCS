@@ -23,11 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
     static ArrayList<Card> cards = new ArrayList<>();
     static ArrayList<User> user_base = new ArrayList<>();
+    static int index = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ProfileActivity.addUsers();
+        addUsers();
         Button loginButton = findViewById(R.id.login_button);
         final EditText loginText = findViewById(R.id.login_text);
         final EditText passwordText = findViewById(R.id.password_text);
@@ -36,11 +37,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String cur_name = loginText.getText().toString();
                 String cur_password = passwordText.getText().toString();
-                ArrayList<User> users = ProfileActivity.user_base;
+                ArrayList<User> users = user_base;
+                Boolean ok = false;
                 for(int i = 0; i < users.size(); i++) {
                     if(cur_name.equals(users.get(i).getLogin()) && cur_password.equals(users.get(i).getPassword())) {
+                        index = i;
                         openProfile();
+                        ok = true;
                     }
+                }
+                if (!ok)
+                {
+                    Toast.makeText(getApplicationContext(), "Ошибка, повторите ввод", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Успешно", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -51,5 +63,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public static void addUsers() {
+        user_base.add(new User("Glebik8", "456"));
+        user_base.add(new User("47th-Draganov", "123"));
+        user_base.add(new User("karasek", "i_love_loli"));
+        user_base.add(new User("hyper_serrriy", "123"));
+    }
 
 }

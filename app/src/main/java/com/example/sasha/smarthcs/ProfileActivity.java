@@ -20,27 +20,24 @@ import static java.security.AccessController.getContext;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    static ArrayList<Card> cards = new ArrayList<>();
-    static ArrayList<User> user_base = new ArrayList<>();
+    ArrayList<User> user_base = MainActivity.user_base;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        addUsers();
 //        Intent intent = new Intent(this, LoginActivity.class);
 //        String message = "start login";
 //        intent.putExtra(EXTRA_MESSAGE, message);
 //        startActivity(intent);
-        User user = new User();
-        user.set_login("keker");
-        user.set_password("123");
+        int j = MainActivity.index;
+        User user = user_base.get(j);
         TextView login = findViewById(R.id.textlogin);
-        login.setTextSize(25);
+        login.setTextSize(15);
         login.setText(user.login);
         RecyclerView bill_list = findViewById(R.id.biil_list);
-        cards.add(new Card("Вода", 145));
-        cards.add(new Card("Газ", 347));
-        cards.add(new Card("Электричество", 262));
+        MainActivity.cards.add(new Card("Вода", 145));
+        MainActivity.cards.add(new Card("Газ", 347));
+        MainActivity.cards.add(new Card("Электричество", 262));
         bill_list.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getResources());
         bill_list.setAdapter(adapter);
@@ -48,11 +45,5 @@ public class ProfileActivity extends AppCompatActivity {
     public void buy(View view)
     {
         Toast.makeText(getApplicationContext(), "Оплата...", Toast.LENGTH_LONG).show();
-    }
-    public static void addUsers() {
-        user_base.add(new User("Glebik8", "456"));
-        user_base.add(new User("47th-Draganov", "123"));
-        user_base.add(new User("karasek", "i_love_loli"));
-        user_base.add(new User("hyper_serrriy", "123"));
     }
 }
