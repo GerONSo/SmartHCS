@@ -26,6 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        addUsers();
 //        Intent intent = new Intent(this, LoginActivity.class);
 //        String message = "start login";
 //        intent.putExtra(EXTRA_MESSAGE, message);
@@ -47,5 +48,11 @@ public class ProfileActivity extends AppCompatActivity {
     public void buy(View view)
     {
         Toast.makeText(getApplicationContext(), "Оплата...", Toast.LENGTH_LONG).show();
+    }
+    public static void addUsers() {
+        user_base.add(new User("Glebik8", "456"));
+        user_base.add(new User("47th-Draganov", "123"));
+        user_base.add(new User("karasek", "i_love_loli"));
+        user_base.add(new User("hyper_serrriy", "123"));
     }
 }

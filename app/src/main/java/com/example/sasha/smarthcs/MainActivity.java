@@ -27,14 +27,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ProfileActivity.addUsers();
         Button loginButton = findViewById(R.id.login_button);
         final EditText loginText = findViewById(R.id.login_text);
-        EditText passwordText = findViewById(R.id.password_text);
+        final EditText passwordText = findViewById(R.id.password_text);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String cur_name = loginText.getText().toString();
-                String cur_password = loginText.getText().toString();
+                String cur_password = passwordText.getText().toString();
                 ArrayList<User> users = ProfileActivity.user_base;
                 for(int i = 0; i < users.size(); i++) {
                     if(cur_name.equals(users.get(i).getLogin()) && cur_password.equals(users.get(i).getPassword())) {
@@ -45,8 +46,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    void openProfile() {
-//        Intent intent = new Intent(this, ProfileActivity.class);
-//        startActivity(intent);
-//    }
+    void openProfile() {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+
 }
