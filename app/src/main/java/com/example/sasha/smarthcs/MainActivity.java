@@ -1,5 +1,7 @@
 package com.example.sasha.smarthcs;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import android.widget.EditText;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this, LoginActivity.class);
+        String message = "start login";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
         User user = new User();
         user.set_login("keker");
         user.set_password("123");
@@ -35,5 +44,6 @@ public class MainActivity extends AppCompatActivity {
     public void buy(View view)
     {
         //Toast.makeText(getApplicationContext(), "Оплата...", Toast.LENGTH_LONG).show();
+
     }
 }
