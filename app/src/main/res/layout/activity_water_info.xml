@@ -27,10 +27,11 @@
         app:layout_constraintBottom_toTopOf="@id/values"/>
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="200dp"
         android:id="@+id/values"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/water"
+        app:layout_constraintBottom_toTopOf="@id/bill_list"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
         <TextView
@@ -57,5 +58,14 @@
             app:layout_constraintTop_toBottomOf="@id/resource_w"
             />
     </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bill_list"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/values"
+        app:layout_constraintBottom_toBottomOf="parent"/>z
 
 </android.support.constraint.ConstraintLayout>

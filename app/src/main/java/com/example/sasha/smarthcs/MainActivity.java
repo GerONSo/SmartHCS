@@ -22,6 +22,7 @@ import static java.security.AccessController.getContext;
 public class MainActivity extends AppCompatActivity {
 
     static ArrayList<Card> cards = new ArrayList<>();
+    static ArrayList<Card2> cards2 = new ArrayList<>();
     static ArrayList<User> user_base = new ArrayList<>();
     static int index = 0;
 
@@ -67,10 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static void addHistory(User user) {
         ArrayList<Bill> history = user.history;
-        history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
-        history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
-        history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
-        history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
+        int n = Math.min((int)(Math.random() * 20), 5);
+        for (int i = 0; i < n; i++) history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
         user.history = history;
     }
 
@@ -89,12 +88,23 @@ public class MainActivity extends AppCompatActivity {
     public static void upd()
     {
         cards.clear();
+        cards2.clear();
         user_base.get(index).history.clear();
         addHistory(user_base.get(0));
         addHistory(user_base.get(1));
         addHistory(user_base.get(2));
         addHistory(user_base.get(3));
-        int j = index;
+        int j = index, year = 2018, month = 10;
+        for (int i = user_base.get(j).history.size() - 1; i >= 0; i--)
+        {
+            Bill last = user_base.get(j).history.get(i);
+            month--;
+            if (month == 0) {
+                year--;
+                month = 12;
+            }
+            cards2.add(new Card2(year, month, last));
+        }
         User user = user_base.get(j);
         Bill last = user.history.get(user.history.size() - 1);
         cards.add(new Card("Вода", last.sum_w));
