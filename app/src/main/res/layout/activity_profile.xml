@@ -36,6 +36,7 @@
         android:layout_width="130dp"
         android:layout_height="31dp"
         android:gravity="center"
+        android:onClick="exit"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@id/biil_list"
         app:layout_constraintHorizontal_bias="0.941"

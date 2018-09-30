@@ -15,7 +15,7 @@ public class TotalInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_total_info);
         int j = MainActivity.index;
-        ArrayList<Bill> history = MainActivity.user_base.get(j).history;
+        ArrayList<Bill> history = MainActivity.user_base.get(j).getHistory();
         Bill last = history.get(history.size() - 1);
         int cost = last.sum_g + last.sum_w + last.sum_l;
         TextView resource = findViewById(R.id.resource_t);

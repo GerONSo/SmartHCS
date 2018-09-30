@@ -15,7 +15,7 @@ public class GazInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gaz_info);
         int j = MainActivity.index;
-        ArrayList<Bill> history = MainActivity.user_base.get(j).history;
+        ArrayList<Bill> history = MainActivity.user_base.get(j).getHistory();
         Bill last = history.get(history.size() - 1);
         int w = last.sum_g;
         double cost = MainActivity.gas_resurse(w);

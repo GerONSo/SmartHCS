@@ -3,18 +3,14 @@ package com.example.sasha.smarthcs;
 import java.util.ArrayList;
 
 public class User {
-    public User(String login, String password) {
+    public User(String login, String password, ArrayList<Bill> history) {
         this.login = login;
         this.password = password;
-        this.history = new ArrayList<>();
+        this.history = history;
     }
 
-    public User() {
-
-    }
-
-    String login = "", password = "";
-    ArrayList<Bill> history;
+    private String login = "", password = "";
+    private ArrayList<Bill> history;
 
     public void set_login(String LOGIN)
     {
@@ -31,5 +27,9 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public ArrayList<Bill> getHistory() {
+        return history;
     }
 }

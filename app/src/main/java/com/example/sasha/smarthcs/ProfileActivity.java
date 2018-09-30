@@ -32,7 +32,7 @@ import static java.security.AccessController.getContext;
 public class ProfileActivity extends AppCompatActivity {
 
     ArrayList<User> user_base = MainActivity.user_base;
-    ArrayList<Bill> history = user_base.get(MainActivity.index).history;
+    ArrayList<Bill> history = user_base.get(MainActivity.index).getHistory();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,10 +43,10 @@ public class ProfileActivity extends AppCompatActivity {
 //        startActivity(intent);
         int j = MainActivity.index;
         User user = user_base.get(j);
-        Bill last = user.history.get(user.history.size() - 1);
+        Bill last = user.getHistory().get(user.getHistory().size() - 1);
         TextView login = findViewById(R.id.textlogin);
         login.setTextSize(15);
-        login.setText(user.login);
+        login.setText(user.getLogin());
         RecyclerView bill_list = findViewById(R.id.biil_list);
         bill_list.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getResources(), new RecyclerViewAdapter.OnResourceSelected() {
@@ -126,6 +126,13 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void startTotalInfo() {
         Intent intent = new Intent(this, TotalInfo.class);
+        startActivity(intent);
+    }
+
+    public void exit(View view)
+    {
+        Toast.makeText(getApplicationContext(), "Выход...", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

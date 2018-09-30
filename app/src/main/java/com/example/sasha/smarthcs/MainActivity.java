@@ -67,38 +67,28 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public static void addHistory(User user) {
-        ArrayList<Bill> history = user.history;
+    public static ArrayList<Bill> addHistory() {
+        ArrayList<Bill> history = new ArrayList<>();
         int n = Math.max((int)(Math.random() * 20), 5);
         for (int i = 0; i < n; i++) history.add(new Bill((int)(Math.random() * 1003 + 100), (int)(Math.random() * 1003 + 100), (int)(Math.random() * 1003 + 100)));
-        user.history = history;
-    }
-
-    public static void clearHistory(User user) {
-        ArrayList<Bill> history = new ArrayList<>();
-        user.history = history;
+        return history;
     }
 
     public static void addUsers() {
-        user_base.add(new User("Glebik8", "456"));
-        user_base.add(new User("47th-Draganov", "123"));
-        user_base.add(new User("karasek", "i_love_loli"));
-        user_base.add(new User("hyper_serrriy", "123"));
+        user_base.add(new User("Glebik8", "456", addHistory()));
+        user_base.add(new User("47th-Draganov", "123", addHistory()));
+        user_base.add(new User("karasek", "i_love_loli", addHistory()));
+        user_base.add(new User("hyper_serrriy", "123", addHistory()));
     }
 
     public static void upd()
     {
         cards.clear();
         cards2.clear();
-        user_base.get(index).history.clear();
-        addHistory(user_base.get(0));
-        addHistory(user_base.get(1));
-        addHistory(user_base.get(2));
-        addHistory(user_base.get(3));
         int j = index, year = 2018, month = 10;
-        for (int i = user_base.get(j).history.size() - 1; i >= 0; i--)
+        for (int i = user_base.get(j).getHistory().size() - 1; i >= 0; i--)
         {
-            Bill last = user_base.get(j).history.get(i);
+            Bill last = user_base.get(j).getHistory().get(i);
             month--;
             if (month == 0) {
                 year--;
@@ -107,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             cards2.add(new Card2(year, month, last));
         }
         User user = user_base.get(j);
-        Bill last = user.history.get(user.history.size() - 1);
+        Bill last = user.getHistory().get(user.getHistory().size() - 1);
         cards.add(new Card("Вода", last.sum_w));
         cards.add(new Card("Газ", last.sum_g));
         cards.add(new Card("Электричество", last.sum_l));
