@@ -21,10 +21,10 @@ public class LightInfo extends AppCompatActivity {
         int second = (int)((cost - first) * 100);
         String res = Integer.toString(first) + "." + (Integer.toString(second).length() == 1 ? "0" : "") + Integer.toString(second) + " МВт/Ч";
         TextView resource = findViewById(R.id.resource_l);
-        resource.setTextSize(30);
+        resource.setTextSize(27);
         resource.setText(res);
         TextView sum = findViewById(R.id.sum_l);
-        sum.setTextSize(30);
+        sum.setTextSize(27);
         sum.setText(Integer.toString(last.sum_l) + " Рублей");
     }
 }

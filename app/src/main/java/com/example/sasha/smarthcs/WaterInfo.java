@@ -22,10 +22,10 @@ public class WaterInfo extends AppCompatActivity {
         int second = (int)((cost - first) * 100);
         String res = Integer.toString(first) + "." + (Integer.toString(second).length() == 1 ? "0" : "") + Integer.toString(second) + " м³";
         TextView resource = findViewById(R.id.resource_w);
-        resource.setTextSize(30);
+        resource.setTextSize(27);
         resource.setText(res);
         TextView sum = findViewById(R.id.sum_w);
-        sum.setTextSize(30);
+        sum.setTextSize(27);
         sum.setText(Integer.toString(last.sum_w) + " Рублей");
     }
 }
