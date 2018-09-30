@@ -69,7 +69,15 @@
             android:fontFamily="@font/courier"
             android:textStyle="bold"/>
     </android.support.constraint.ConstraintLayout>
-
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="10dp"
+        android:id="@+id/line"
+        android:background="@drawable/line"
+        app:layout_constraintBottom_toTopOf="@id/bill_list"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/values"/>
     <android.support.v7.widget.RecyclerView
         android:id="@+id/bill_list"
         android:layout_width="match_parent"
