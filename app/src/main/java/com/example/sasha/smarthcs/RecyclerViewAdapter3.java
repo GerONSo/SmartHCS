@@ -32,8 +32,10 @@ public class RecyclerViewAdapter3 extends RecyclerView.Adapter<RecyclerViewAdapt
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
-        viewHolder.name.setText("Дата : " + Integer.toString(MainActivity.cards2.get(i).month) + "." + Integer.toString(MainActivity.cards2.get(i).year));
-        viewHolder.cost.setText("Цена : " + Integer.toString(MainActivity.cards2.get(i).now.sum_l) + " Рублей");
+        viewHolder.name.setText("Дата : ");
+        viewHolder.namet.setText(Integer.toString(MainActivity.cards2.get(i).month) + "." + Integer.toString(MainActivity.cards2.get(i).year));
+        viewHolder.cost.setText("Цена : ");
+        viewHolder.costt.setText(Integer.toString(MainActivity.cards2.get(i).now.sum_l) + " Рублей");
     }
 
     @Override
@@ -45,13 +47,17 @@ public class RecyclerViewAdapter3 extends RecyclerView.Adapter<RecyclerViewAdapt
 
         TextView name;
         TextView cost;
+        TextView namet;
+        TextView costt;
         View view;
 
         public ViewHolder(View itemView) {
             super(itemView);
             view=itemView;
-            cost = view.findViewById(R.id.cost);
+            cost = view.findViewById(R.id.textView2);
             name = view.findViewById(R.id.name);
+            namet = view.findViewById(R.id.cost);
+            costt = view.findViewById(R.id.textView3);
         }
     }
 }
