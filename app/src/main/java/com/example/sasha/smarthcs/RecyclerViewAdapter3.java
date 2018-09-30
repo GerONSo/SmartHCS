@@ -32,8 +32,6 @@ public class RecyclerViewAdapter3 extends RecyclerView.Adapter<RecyclerViewAdapt
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
-        viewHolder.name.setTextSize(20);
-        viewHolder.cost.setTextSize(20);
         viewHolder.name.setText("Дата : " + Integer.toString(MainActivity.cards2.get(i).month) + "." + Integer.toString(MainActivity.cards2.get(i).year));
         viewHolder.cost.setText("Цена : " + Integer.toString(MainActivity.cards2.get(i).now.sum_l) + " Рублей");
     }

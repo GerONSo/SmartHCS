@@ -105,7 +105,6 @@ public class ProfileActivity extends AppCompatActivity {
                         "Ростелеком!!!",
                         "47",
                         Collections.singleton(PaymentMethodType.BANK_CARD)
-
                 )
         );
     }

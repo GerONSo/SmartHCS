@@ -20,7 +20,7 @@
             android:id="@+id/name"
             android:layout_width="179dp"
             android:layout_height="31dp"
-            android:textSize="20dp"
+            android:textSize="15sp"
             card_view:layout_constraintLeft_toLeftOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             card_view:layout_constraintBottom_toTopOf="@id/cost"
@@ -34,7 +34,7 @@
             android:id="@+id/cost"
             android:layout_width="179dp"
             android:layout_height="31dp"
-            android:textSize="20dp"
+            android:textSize="15sp"
             card_view:layout_constraintRight_toLeftOf="@id/logo"
             card_view:layout_constraintTop_toBottomOf="@id/name"
             card_view:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +42,8 @@
             android:layout_margin="8dp"
             android:textColor="@color/black"
             android:fontFamily="@font/courier"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            />
 
         <ImageView
             android:id="@+id/logo"

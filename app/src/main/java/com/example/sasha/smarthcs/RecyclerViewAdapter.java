@@ -34,8 +34,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
-        viewHolder.name.setTextSize(20);
-        viewHolder.cost.setTextSize(20);
         viewHolder.name.setText(MainActivity.cards.get(i).name);
         viewHolder.cost.setText(Integer.toString(MainActivity.cards.get(i).cost) + " Рублей");
         if (i == 0) viewHolder.icon.setImageBitmap(BitmapFactory.decodeResource(resources, R.drawable.water));
