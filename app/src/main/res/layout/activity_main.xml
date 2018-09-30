@@ -32,7 +32,10 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:hint="Login"/>
+            android:hint="Login"
+            android:textColor="@color/black"
+            android:fontFamily="@font/courier"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/password_text"
@@ -43,7 +46,10 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/login_text"
-            android:hint="Password"/>
+            android:hint="Password"
+            android:textColor="@color/black"
+            android:fontFamily="@font/courier"
+            android:textStyle="bold"/>
     </android.support.constraint.ConstraintLayout>
 
     <Button
@@ -54,6 +60,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fields"/>
+        app:layout_constraintTop_toBottomOf="@id/fields"
+        android:textColor="@color/black"/>
 
 </android.support.constraint.ConstraintLayout>

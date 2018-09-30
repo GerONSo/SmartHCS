@@ -8,14 +8,17 @@
 
     <TextView
         android:id="@+id/rate_g"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
-        android:text="Тариф:  6.5 ₽/м³"
+        android:text="6.5 Р/м³"
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@id/values"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/gaz"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:fontFamily="@font/courier"
+        android:textStyle="bold"/>
 
     <ImageView
         android:layout_width="110dp"
@@ -38,28 +41,33 @@
         app:layout_constraintTop_toBottomOf="@id/gaz">
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
             android:id="@+id/resource_g"
-            android:layout_width="150dp"
-            android:layout_height="75dp"
             android:text="-"
             android:textAlignment="center"
             android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/sum_g"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            android:textColor="@color/black"
+            android:fontFamily="@font/courier"
+            android:textStyle="bold"/>
         <TextView
-            android:id="@+id/sum_g"
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="75dp"
+            android:id="@+id/sum_g"
             android:text="-"
             android:textAlignment="center"
             android:textSize="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/resource_g" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resource_g"
+            android:textColor="@color/black"
+            android:fontFamily="@font/courier"
+            android:textStyle="bold"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.v7.widget.RecyclerView

@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
     public static void addHistory(User user) {
         ArrayList<Bill> history = user.history;
-        int n = Math.min((int)(Math.random() * 20), 5);
-        for (int i = 0; i < n; i++) history.add(new Bill((int)(Math.random() * 1003), (int)(Math.random() * 1003), (int)(Math.random() * 1003)));
+        int n = Math.max((int)(Math.random() * 20), 5);
+        for (int i = 0; i < n; i++) history.add(new Bill((int)(Math.random() * 1003 + 100), (int)(Math.random() * 1003 + 100), (int)(Math.random() * 1003 + 100)));
         user.history = history;
     }
 

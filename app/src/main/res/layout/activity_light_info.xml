@@ -6,15 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".LightInfo">
     <TextView
-        android:layout_width="180dp"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:id="@+id/rate_l"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/light"
         app:layout_constraintBottom_toTopOf="@id/values"
-        android:text="500 ₽/МВт/ч"
-        android:textSize="30dp"/>
+        android:text="500 Р/МВт/ч"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/courier"
+        android:textStyle="bold"/>
 
     <ImageView
         android:layout_width="110dp"
@@ -35,7 +38,7 @@
         app:layout_constraintBottom_toTopOf="@id/bill_list"
         app:layout_constraintRight_toRightOf="parent">
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="75dp"
             android:id="@+id/resource_l"
             android:text="-"
@@ -44,9 +47,12 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/sum_l"/>
+            app:layout_constraintBottom_toTopOf="@id/sum_l"
+            android:textColor="@color/black"
+            android:fontFamily="@font/courier"
+            android:textStyle="bold"/>
         <TextView
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="75dp"
             android:id="@+id/sum_l"
             android:text="-"
@@ -56,7 +62,9 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/resource_l"
-            />
+            android:textColor="@color/black"
+            android:fontFamily="@font/courier"
+            android:textStyle="bold"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.v7.widget.RecyclerView

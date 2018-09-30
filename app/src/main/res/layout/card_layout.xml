@@ -24,7 +24,10 @@
         app:layout_constraintLeft_toRightOf="@id/icon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/cost"
-        app:layout_constraintRight_toLeftOf="@id/plus"/>
+        app:layout_constraintRight_toLeftOf="@id/plus"
+        android:textColor="@color/black"
+        android:fontFamily="@font/courier"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/cost"
@@ -34,7 +37,10 @@
         app:layout_constraintTop_toBottomOf="@id/name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/icon"
-        app:layout_constraintRight_toLeftOf="@id/plus"/>
+        app:layout_constraintRight_toLeftOf="@id/plus"
+        android:textColor="@color/black"
+        android:fontFamily="@font/courier"
+        android:textStyle="bold"/>
 
     <ImageButton
         android:layout_width="64dp"

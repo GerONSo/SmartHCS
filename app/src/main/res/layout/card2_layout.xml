@@ -25,7 +25,10 @@
             card_view:layout_constraintTop_toTopOf="parent"
             card_view:layout_constraintBottom_toTopOf="@id/cost"
             card_view:layout_constraintRight_toLeftOf="@id/logo"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/courier"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/cost"
@@ -36,7 +39,10 @@
             card_view:layout_constraintTop_toBottomOf="@id/name"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintLeft_toLeftOf="parent"
-            android:layout_margin="8dp"/>
+            android:layout_margin="8dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/courier"
+            android:textStyle="bold"/>
 
         <ImageView
             android:id="@+id/logo"
