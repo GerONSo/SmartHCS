@@ -102,7 +102,7 @@ public class ProfileActivity extends AppCompatActivity {
                 new Amount(new BigDecimal(Integer.toString(sum)), Currency.getInstance("RUB")),
                 new ShopParameters(
                         "Умный ЖКХ",
-                        "Ростелеком!!!",
+                        "Оплата ЖКХ",
                         "47",
                         Collections.singleton(PaymentMethodType.BANK_CARD)
                 )

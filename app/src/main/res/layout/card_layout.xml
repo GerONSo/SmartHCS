@@ -49,10 +49,9 @@
             android:fontFamily="@font/courier"
             android:textStyle="bold"/>
 
-        <ImageButton
+        <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:background="@null"
             android:id="@+id/plus"
             android:src="@drawable/more"
             card_view:layout_constraintRight_toRightOf="parent"

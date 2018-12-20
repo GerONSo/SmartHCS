@@ -60,7 +60,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView name;
         TextView cost;
         ImageView icon;
-        ImageButton plus;
+        ImageView plus;
 
         public ViewHolder(View itemView) {
             super(itemView);
